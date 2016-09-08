@@ -29,5 +29,16 @@ module.exports = {
 	},
 	WEB_URL : {
 		BASE_HST_URL : "http://dev.hstsolar.com"
+	},
+	signup_data : {
+		FIRST_NAME : "NIRAV",
+		LAST_NAME : "KAPOOR",
+		EMAIL : "niravkapoor27@gmail.com",
+		PASSWORD : "nirav1992",
+		CONFIRM_PASSWORD : "nirav1992"
+	},
+	login_data : {
+		EMAIL : "niravkapoor27@gmail.com",
+		PASSWORD : "nirav1992"
 	}
 }

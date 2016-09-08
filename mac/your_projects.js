@@ -1,3 +1,6 @@
+'use strict';
+
+
 var webdriver = require('selenium-webdriver');
 var prompt = require('prompt');
 prompt.start();

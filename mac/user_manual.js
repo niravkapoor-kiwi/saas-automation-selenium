@@ -1,3 +1,5 @@
+'use strict';
+
 var webdriver = require('selenium-webdriver');
 
 
