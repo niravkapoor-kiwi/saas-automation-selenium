@@ -2,6 +2,7 @@ var webdriver = require('selenium-webdriver');
 
 module.exports = {
 	set_PathValue : function(){
+		//process.env['PATH']= process.env['PATH'] + ":/usr/bin/safaridriver";
 		process.env['PATH']= process.env['PATH'] + ":/Users/kiwitech/Downloads/selenium-webdrivers/mac";
 		return;
 	},
@@ -21,6 +22,11 @@ module.exports = {
    				withCapabilities(webdriver.Capabilities.firefox()).
    				build();
    				break;
+   			case "safari" : 
+   				driver = new webdriver.Builder().
+   				withCapabilities(webdriver.Capabilities.safari()).
+   				build();
+   				break;	
    			default :
    				driver = false;
 		}
@@ -40,5 +46,9 @@ module.exports = {
 	login_data : {
 		EMAIL : "niravkapoor27@gmail.com",
 		PASSWORD : "nirav1992"
+	},
+	new_project_data : {
+		PROJECT_NAME :  "Automated Test Project",
+		LOCATION : 'Delhi, DL, India'
 	}
 }
