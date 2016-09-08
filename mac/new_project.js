@@ -12,6 +12,7 @@ module.exports = function(driver){
 		 	location.sendKeys(webdriver.Key.ARROW_DOWN);	
 		 	setTimeout(function(){
 		 		location.sendKeys(webdriver.Key.ENTER);
+		 		require('../mac/edit_project.js')(driver);
 		 	},1000)
 		 },1000)
 		 
