@@ -5,8 +5,6 @@ var webdriver = require('selenium-webdriver');
 
 module.exports = function(driver){
 	console.log("indirver");
-	//console.log("webdriver.until",webdriver.until);
-		console.log("is displayed",driver.findElement(webdriver.By.name("help_text")).isDisplayed());
 	setTimeout(function(){
 	
 		driver.findElement(webdriver.By.name("help_text")).sendKeys('Hi\nTesting Selenium Autmated Test Case\nThanks\nUser');
