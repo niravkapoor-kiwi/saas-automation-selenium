@@ -1,12 +1,13 @@
 var webdriver = require('selenium-webdriver');
-
+var Helper = require('../mac/config.js');
 module.exports = function(driver){
 	var web_url = require('../mac/config.js').WEB_URL.BASE_HST_URL+"/#/login";
 	driver.get(web_url);
 
-	setTimeout(function(){
-		driver.findElement(webdriver.By.name('login_email')).sendKeys('niravkoor27@gmail.com');
-	 	driver.findElement(webdriver.By.name('login_password')).sendKeys('nirav1992');
-	 	driver.findElement(webdriver.By.name('login_btn')).click();
-	},15000);
+driver.wait(webdriver.until.elementLocated(webdriver.By.name('login_email'))).then(function(elm) {
+    elm.sendKeys(Helper.login_data.EMAIL);
+    driver.findElement(webdriver.By.name('login_password')).sendKeys(Helper.login_data.PASSWORD);
+    driver.findElement(webdriver.By.name('login_btn')).click();
+    require('../mac/your_projects.js')(driver);
+});
 }

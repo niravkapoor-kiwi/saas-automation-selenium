@@ -1,37 +1,19 @@
 
  var webdriver = require('selenium-webdriver');
-
+var Helper = require('../mac/config.js');
 module.exports = function(driver){
+	//Nirav Kapoor : web url to which driver will redirected to 
 	var web_url = require('../mac/config.js').WEB_URL.BASE_HST_URL +"/#/register";
 	driver.get(web_url);
-	setTimeout(function(){
-		driver.findElement(webdriver.By.name("first_name")).sendKeys('Nirav');
-		driver.findElement(webdriver.By.name('last_name')).sendKeys('Kapoor');
-		driver.findElement(webdriver.By.name('email')).sendKeys('niravkoor27@gmail.com');
-	 	driver.findElement(webdriver.By.name('password')).sendKeys('nirav1992');
-	 	driver.findElement(webdriver.By.name('confirm_password')).sendKeys('nirav1992');
+	//Nirav Kapoor : find the element with the name attribute as first_name and then fille the value
+	driver.wait(webdriver.until.elementLocated(webdriver.By.name('first_name'))).then(function(elm) {
+		elm.sendKeys(Helper.signup_data.FIRST_NAME);
+		driver.findElement(webdriver.By.name('last_name')).sendKeys(Helper.signup_data.LAST_NAME);
+		driver.findElement(webdriver.By.name('email')).sendKeys(Helper.signup_data.EMAIL);
+	 	driver.findElement(webdriver.By.name('password')).sendKeys(Helper.signup_data.PASSWORD);
+	 	driver.findElement(webdriver.By.name('confirm_password')).sendKeys(Helper.signup_data.PASSWORD);
 	 	driver.findElement(webdriver.By.name("accept_terms_of_use")).click();
 	 	driver.findElement(webdriver.By.name("accept_privacy_policy")).click();
 	 	driver.findElement(webdriver.By.name('signup_btn')).click();
-	 	// setTimeout(function(){
-	 	// 	driver.findElement(webdriver.By.name('continue_btn')).click();
-	 	// },10000);
-	},20000);	
+	})
 }
-
-
-
-// driver.wait(function() {
-//     return driver.findElement(webdriver.By.name("first_name")).isDisplayed();
-// }, timeout);
-
-
-// WebElement myDynamicElement = (new WebDriverWait(driver, 10))
-//   .until(ExpectedConditions.presenceOfElementLocated(By.name("myDynamicElement")));
-//driver.manage().timeouts().pageLoadTimeout
-//console.log("navigator.platform",navigator.platform);
-// driver.wait(function(){
-// 	console.log("adasdas");
-// driver.findElement(webdriver.By.name("first_name")).sendKeys('Nirav');
-
-// },20000)
