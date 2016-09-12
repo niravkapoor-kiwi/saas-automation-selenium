@@ -2,6 +2,7 @@ var webdriver = require('selenium-webdriver');
 
 module.exports = {
 	set_PathValue : function(){
+		//Nirav Kapoor : path should be where webdriver setup is kept
 		process.env['PATH']= process.env['PATH'] + ":/Users/kiwitech/Downloads/selenium-webdrivers/mac";
 		return;
 	},
