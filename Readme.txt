@@ -4,7 +4,7 @@ Selenium Automated Test Cases
 2. selenium-webdrivers contains platform specific web drivers/ - 
 3. For safari , below is the url for the safari webdriver extension :
 	http://selenium-release.storage.googleapis.com/index.html?path=2.45/
-4. In config.js contains the path of web driver folder.
+4. Config.js contains the path of web driver folder.
 5. For platform specific configuration, just change the path in config.js file.
 
 
